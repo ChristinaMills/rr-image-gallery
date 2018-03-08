@@ -16,7 +16,7 @@ class Albums extends Component {
       <div>
         <h1>Albums</h1>
         <ul>
-          {/* {albums.map(album => <Album key={album.id} {...album}/>)} */}
+          {albums && albums.map(album => <Album key={album.id} {...album}/>)}
         </ul>
       </div>
     );
@@ -24,7 +24,7 @@ class Albums extends Component {
 }
 
 export default connect(
-  state => ({ albums: state.albums }),
+  state => ({ albums: state.album }),
   { loadAlbums }
 )(Albums);
 

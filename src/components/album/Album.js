@@ -8,6 +8,7 @@ export default class Album extends Component{
     return (
       <li className="album-item">
         <Link to={`/albums/${id}`}>{name}</Link>
+        ksajhfkasjhfdkajshdfkjashdf
       </li>
 
     );
