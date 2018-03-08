@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import './app.css';
-// import { connect } from '../image/Images';
 import Images from '../image/Images';
+import Albums from '../album/Albums';
 import Error from './Error';
 import { connect } from 'react-redux';
 
@@ -23,7 +23,8 @@ class App extends Component {
           </div>
           <div>Loading status is: {loading ? 'loading!!!!' : 'not loading!' }</div>
           <Switch>
-            <Route exact path="/" component={Images}/>
+            <Route exact path="/" component={Albums}/>
+            {/* <Route path="/albums/:id" component={Images}/> */}
             <Redirect to="/"/>
           </Switch>
         </main>
