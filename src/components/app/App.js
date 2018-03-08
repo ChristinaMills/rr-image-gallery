@@ -27,8 +27,8 @@ class App extends Component {
           <div>Loading status is: {loading ? 'loading!!!!' : 'not loading!' }</div>
           {/* <div><Albums/></div> */}
           <Switch>
-            <Route path="/" component={Albums}/>
-            {/* <Route path="/albums/:id" component={Images}/> */}
+            <Route exact path="/" component={Albums}/>
+            <Route path="/albums/:id" component={Images}/>
             <Redirect to="/"/>
           </Switch>
         </main>

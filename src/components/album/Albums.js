@@ -6,7 +6,7 @@ import Album from './Album';
 class Albums extends Component {
 
   componentDidMount(){
-    this.props.loadAlbums();
+    if(this.props.albums.length === 0) this.props.loadAlbums();
   }
 
   render() {
@@ -16,7 +16,9 @@ class Albums extends Component {
       <div>
         <h1>Albums</h1>
         <ul>
-          {albums && albums.map(album => <Album key={album.id} {...album}/>)}
+          {albums && albums.map(album => {
+            return <Album key={album.id} {...album}/>;
+          })}
         </ul>
       </div>
     );

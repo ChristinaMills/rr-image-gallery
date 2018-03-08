@@ -17,7 +17,7 @@ class Images extends Component {
   }
 
   handleLoad() {
-    this.props.loadImages();
+    this.props.loadImages(this.props.id);
   }
 
 
@@ -33,7 +33,7 @@ class Images extends Component {
         <section className="grid">
           <ul>
             {images.images &&
-          images.images.map(image => <Image key={image.id} {...image}/>)}
+          images.images.map(image => <Image albumId={this.props.id} key={image.id} {...image}/>)}
           </ul>
         </section>
 

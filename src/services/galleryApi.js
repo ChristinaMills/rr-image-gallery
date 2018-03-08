@@ -39,9 +39,11 @@ function remove(id) {
 }
 
 
+
+
 export default {
-  load,
   add,
   getAllAlbums,
+  load,
   remove
 };

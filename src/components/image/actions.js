@@ -30,3 +30,4 @@ export function loadAlbums() {
     payload: galleryApi.getAllAlbums()
   };
 }
+
