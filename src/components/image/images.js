@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 import { addImage, loadImages } from './actions';
 import Image from './Image';
 import ImageForm from './ImageForm';
-
+import { getAllAlbums } from '../../services/galleryApi';
 
 class Images extends Component {
   
@@ -21,11 +21,12 @@ class Images extends Component {
   }
 
 
-
   render() {
     const { images, addImage, loading } = this.props;
 
     return (
+
+      //put if id i smine then display here
       <div className="container"> 
         <ImageForm onComplete={addImage}/>
         
@@ -35,6 +36,8 @@ class Images extends Component {
           images.images.map(image => <Image key={image.id} {...image}/>)}
           </ul>
         </section>
+
+
       </div>
     );
   }

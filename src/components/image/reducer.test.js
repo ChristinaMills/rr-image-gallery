@@ -1,4 +1,4 @@
-import  { images, IMAGE_ADD, IMAGE_REMOVE, IMAGE_LOAD } from './reducers';
+import  { album, images, ALBUM_LOAD, IMAGE_ADD, IMAGE_REMOVE, IMAGE_LOAD } from './reducers';
 
 const imageToAdd = { id: 123, title: 'My Life', url: 'none.jpg', album: 1, description: 'moody' };
 
@@ -26,5 +26,10 @@ it('removes an image', () => {
 
 it('defaults to empty array', () => {
   const state = images(undefined, {});
+  expect(state).toEqual([]);
+});
+
+it('loads albums', () => {
+  const state = album([], { type: ALBUM_LOAD, payload: [] });
   expect(state).toEqual([]);
 });
