@@ -10,13 +10,16 @@ import './image.css';
 class Image extends Component {
   render() {
     const { id, description, url, removeImage, title, album } = this.props;
-
+    
+    
     return (
       <li>
         <figure className="cell">
           <img className="responsive-image" src={url} alt={title}/>
           <figcaption>{description}</figcaption>
-          <p>{album}</p>
+          <p>Album: {title}</p>
+          
+        
           <button onClick={()=> removeImage(id)}>REMOVE</button>
         </figure>
       </li>
@@ -27,6 +30,6 @@ class Image extends Component {
 
 
 export default connect(
-  null, 
+  state => state, 
   { removeImage }
 )(Image);

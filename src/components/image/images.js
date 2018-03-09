@@ -5,7 +5,7 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addImage, loadImages } from './actions';
+import { addImage, loadImages, loadAlbums } from './actions';
 import Image from './Image';
 import ImageForm from './ImageForm';
 import { getAllAlbums } from '../../services/galleryApi';
@@ -18,11 +18,14 @@ class Images extends Component {
 
   handleLoad() {
     this.props.loadImages(this.props.id);
+    console.log(this.props.id);
+
   }
 
 
   render() {
-    const { images, addImage, loading } = this.props;
+    const { images, image, addImage, loading, id } = this.props;
+    console.log('IMAGES', images);
 
     return (
 
@@ -44,9 +47,12 @@ class Images extends Component {
 }
 
 export default connect(
-  state => ({ images: state.images }),
-  { addImage, loadImages }
+  (state, props) => ({ 
+    images: state.images,
+    albums: state.album,
+    id: props.match.params.id }),
+  { addImage, loadImages, loadAlbums }
 )(Images);
 
-
+// images: state.images
 //fist line what i want from the store

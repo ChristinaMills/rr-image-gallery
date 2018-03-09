@@ -7,16 +7,18 @@ class Albums extends Component {
 
   componentDidMount(){
     if(this.props.albums.length === 0) this.props.loadAlbums();
+    
   }
 
   render() {
     const { albums } = this.props;
+    console.log('^^^^', albums);
 
     return (
       <div>
         <h1>Albums</h1>
         <ul>
-          {albums && albums.map(album => {
+          { albums.map(album => {
             return <Album key={album.id} {...album}/>;
           })}
         </ul>

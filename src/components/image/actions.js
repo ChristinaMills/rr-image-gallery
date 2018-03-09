@@ -3,10 +3,10 @@ import galleryApi from '../../services/galleryApi';
 
 const album = '5a9f614c56745c0021e1b928';
 
-export function loadImages() {
+export function loadImages(albumId) {
   return {
     type: IMAGE_LOAD,
-    payload: galleryApi.load()
+    payload: galleryApi.load(albumId)
   };
 }
 export function addImage(image) {
