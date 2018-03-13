@@ -18,7 +18,8 @@ class Images extends Component {
 
   handleLoad() {
     this.props.loadImages(this.props.id);
-    console.log(this.props.id);
+    console.log('i think this is id', this.props.id);
+    
 
   }
 
@@ -30,15 +31,25 @@ class Images extends Component {
     return (
 
       //put if id i smine then display here
-      <div className="container"> 
-        <ImageForm onComplete={addImage}/>
+      <div>
+        {(this.props.id === '5a9f614c56745c0021e1b928')
+          ?
+          <div id="add-image">
+            <ImageForm onComplete={addImage}/>
+          </div>
+          :
+          null
+
+        }
         
         <section className="grid">
           <ul>
             {images.images &&
-          images.images.map(image => <Image albumId={this.props.id} key={image.id} {...image}/>)}
+          images.images.map((image, i) => <Image key={i} {...image} albumId={this.props.id}/>)}
           </ul>
+          
         </section>
+
 
 
       </div>

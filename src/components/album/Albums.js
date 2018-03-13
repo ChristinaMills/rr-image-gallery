@@ -12,15 +12,18 @@ class Albums extends Component {
 
   render() {
     const { albums } = this.props;
-    console.log('^^^^', albums);
+    console.log('^^^^why do you run so much?', albums);
 
     return (
       <div>
         <h1>Albums</h1>
         <ul>
+
           { albums.map(album => {
             return <Album key={album.id} {...album}/>;
+            {console.log('RRRRRRRRRRRRRRRRRRRRRDO ', album.id)}
           })}
+
         </ul>
       </div>
     );

@@ -9,7 +9,7 @@ import './image.css';
 
 class Image extends Component {
   render() {
-    const { id, description, url, removeImage, title, album } = this.props;
+    const { id, description, url, removeImage, title, albumId } = this.props;
     
     
     return (
@@ -20,7 +20,7 @@ class Image extends Component {
           <p>Album: {title}</p>
           
         
-          <button onClick={()=> removeImage(id)}>REMOVE</button>
+          <button onClick={()=> removeImage(albumId)}>REMOVE</button>
         </figure>
       </li>
     );
