@@ -1,5 +1,6 @@
-import { ALBUM_LOAD, IMAGE_ADD, IMAGE_REMOVE, IMAGE_LOAD } from './reducers';
+import { ALBUM_LOAD, IMAGE_ADD, IMAGE_REMOVE, IMAGE_LOAD, APPLY_FILTER } from './reducers';
 import galleryApi from '../../services/galleryApi';
+
 
 const album = '5a9f614c56745c0021e1b928';
 
@@ -28,6 +29,13 @@ export function loadAlbums() {
   return {
     type: ALBUM_LOAD,
     payload: galleryApi.getAllAlbums()
+  };
+}
+
+export function applyFilter(filter){
+  return {
+    type: APPLY_FILTER,
+    payload: filter
   };
 }
 
